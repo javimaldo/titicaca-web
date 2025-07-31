@@ -2,107 +2,18 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Piloto de Monitoreo Satelital OWT – Lago Titicaca</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-  <style>
-    body {
-      margin: 0; font-family: Arial, sans-serif; background: #f5f5f5;
-    }
-    header {
-      background: #004b8d; color: white; padding: 1rem 2rem;
-    }
-    header h1 {
-      margin: 0; font-size: 1.8rem;
-    }
-    nav {
-      background: #e8e8e8; padding: 0.5rem 2rem;
-      display: flex; gap: 1rem; flex-wrap: wrap;
-    }
-    nav a {
-      text-decoration: none; color: #004b8d; font-weight: bold;
-    }
-    #map {
-      height: 70vh; width: 100%; margin-top: 1rem;
-    }
-    .content {
-      padding: 2rem;
-      background: white; margin: 1rem auto; max-width: 1000px;
-      border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .content h2 {
-      color: #004b8d;
-    }
-    footer {
-      background: #004b8d; color: white; text-align: center; padding: 1rem;
-    }
-    .btn-descarga {
-      display: inline-block; background: #004b8d; color: white;
-      padding: 0.6rem 1rem; border-radius: 5px; text-decoration: none;
-      transition: background 0.3s;
-    }
-    .btn-descarga:hover {
-      background: #00376d;
-    }
-    .timelapse {
-      text-align: center;
-      margin-top: 2rem;
-    }
-    .timelapse img {
-      max-width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-  </style>
+  <title>Monitoreo Satelital del Lago Titicaca</title>
 </head>
-<body>
-  <header>
-    <h1>Piloto de Monitoreo Satelital OWT – Lago Titicaca</h1>
-    <p>Proyecto piloto desarrollado por la Autoridad Binacional del Lago Titicaca (ALT)</p>
-  </header>
+<body style="font-family: Arial, sans-serif; text-align: center; padding: 40px;">
+  <h1>Monitoreo Satelital del Lago Menor del Titicaca</h1>
+  <p><strong>Clasificación OWT con imágenes Sentinel-3</strong></p>
 
-  <nav>
-    <a href="#map">🗺️ Visor Satelital</a>
-    <a href="#info">📌 ¿Qué mostramos?</a>
-    <a href="#descarga">⬇️ Descarga de datos</a>
-    <a href="#timelapse">🎞️ Time Lapse</a>
-  </nav>
+  <img src="only_dominant_class_subset_1_of_subset_0_of_.png" alt="Clasificación OWT" width="70%">
 
-  <div id="map"></div>
+  <p style="margin-top: 30px;">Este sitio forma parte de la tesis doctoral de <strong>Javier Alberto Maldonado Alfaro (JAMA)</strong>, titulada:</p>
+  <p><em>"Monitoreo espacial de clorofila-a en las áreas someras vulnerables del Lago Menor del Titicaca"</em></p>
 
-  <div class="content" id="info">
-    <h2>¿Qué representa este mapa?</h2>
-    <p>Este visor muestra mapas generados a partir de imágenes satelitales Sentinel-3 procesadas mediante clasificación óptica del agua (OWT). Cada color representa un tipo óptico distinto, indicando variaciones en la concentración de clorofila-a y el estado trófico del lago.</p>
-    <p>El objetivo es identificar zonas críticas de eutrofización, con utilidad para la gestión ambiental, pesca sostenible y alertas tempranas.</p>
-  </div>
-
-  <div class="content" id="descarga">
-    <h2>Descarga de imágenes satelitales</h2>
-    <p>Puedes descargar los productos geoespaciales en formato PNG. Las imágenes están georreferenciadas y corresponden a fechas clave de observación binacional.</p>
-    <a href="owt_image.png" class="btn-descarga" download>📥 Descargar Mapa OWT - 13 enero 2025 (PNG)</a>
-  </div>
-
-  <div class="content timelapse" id="timelapse">
-    <h2>Time Lapse del Lago Titicaca</h2>
-    <p>Esta animación muestra la evolución de la clasificación OWT durante un periodo específico en 2025, captando variaciones espacio-temporales en la calidad del agua.</p>
-    <img src="timelapse_comprimido.gif" alt="Time Lapse OWT Lago Titicaca">
-  </div>
-
-  <footer>
-    <p>© 2025 Autoridad Binacional Autónoma del Lago Titicaca (ALT) | Sitio piloto en desarrollo</p>
-  </footer>
-
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  <script>
-    var map = L.map('map').setView([-16.0, -69.6], 9);
-
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap'
-    }).addTo(map);
-
-    // Superposición de imagen OWT convertida
-    var imageBounds = [[-16.319236, -69.8349645], [-15.05642, -69.3212495]];
-    L.imageOverlay('owt_image.png', imageBounds).addTo(map);
-  </script>
+  <p>Desarrollado con datos satelitales de la misión Sentinel-3 y clasificación óptica de tipos de agua (OWT).</p>
 </body>
 </html>
+
